@@ -1,0 +1,164 @@
+﻿@using WebMatrix;
+@using System;
+@using System.Collections.Generic;
+@using System.Configuration;
+@using System.Data.SqlClient;
+@using System.Web.Security;
+
+@{ Layout = "~/Shared/_Layout1.cshtml";
+
+    Page.Title = "Hem";
+}
+
+@{
+    bool rememberLogin = false;
+    if (IsPost)
+    {
+        AntiForgery.Validate();
+        string UserName = Request["UserName"];
+        string Password = Request["Password"];
+        rememberLogin = Request["rememberLogin"].AsBool();
+
+        Validation.RequireFields("UserName", "Password");
+        string returnUrl = Request["returnUrl"];
+        if (returnUrl.IsEmpty())
+        {
+            returnUrl = Href("~/");
+        }
+        if (Validation.IsValid())
+        {
+            if (WebSecurity.UserExists(UserName))
+            {
+                if (WebSecurity.Login(UserName, Password, rememberLogin))
+                {
+                    Context.RedirectLocal(returnUrl);
+                }
+                else
+                {
+                    Validation.AddFormError("Felaktigt användarnamn eller lösenord.");
+                }
+            }
+            else
+            {
+                Validation.AddFormError("Användaren existerar ej.");
+            }
+        }
+    }
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--==== CSS ====-->
+    <link rel="stylesheet" href="~/css/StyleSheet.css">
+    <script src="~/java/javamain.js"></script>
+    <!--==== BOX ICONS ====-->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>HelpThroughSound</title>
+</head>
+
+<body>
+    <!--==== HEADER ====-->
+
+
+    <main class="l-main">
+        <!--==== ALL PRODUCTS ====-->
+
+        <section class="featured section" id="shop">
+            <h2 class="section-title"><span class="Title1">M</span>ain <span class="Title1">S</span>upport</h2>
+            <div class="featured__container bd-grid">
+                <div class="box__cart5">
+                    <h2>Log in!</h2>
+                    <div class="form4 top">
+                        <div class="container">
+                            <div class="row">
+                                    <div class="form-bg">
+                                        <form method="post" class="form">
+                                            @AntiForgery.GetHtml()
+                                            @Html.ValidationSummary(true)
+                                            <div class="form-group">
+                                                <label class="sr-only">UserName</label>
+                                                <input type="text" class="form-control" id="exampleInputName2" placeholder="Your Username" maxlength="20">
+                                                @Html.ValidationMessage("UserName")
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only">Password</label>
+                                                <input type="password" class="form-control" id="exampleInputEmail2" placeholder="Your password" maxlength="50">
+                                                @Html.ValidationMessage("Password")
+                                            </div>
+                                            <label>Remember my account</label>
+                                            <input type="checkbox" name="rememberLogin" value="true" checked="@rememberLogin" />
+                                            <button type="submit" class="btn text-center btn-blue">Log in</button>
+                                        </form>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box__cart5">
+                    <h2>Enter your Info!</h2>
+                    <div class="form4 top">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-7 col-md-offset-2">
+                                    <div class="form-bg">
+                                        <form class="form">
+                                            <div class="form-group"> <label class="sr-only">Name</label> <input type="text" class="form-control" required="" id="nameNine2" placeholder="Your Name"> </div>
+                                            <div class="form-group"> <label class="sr-only">Email</label> <input type="email" class="form-control" required="" id="emailNine2" placeholder="Email Address"> </div>
+                                            <div class="form-group"> <label class="sr-only">Name</label> <textarea class="form-control" required="" rows="7" id="messageNine2" placeholder="Write message"></textarea> </div> <button type="submit" class="btn text-center btn-blue">Send Message</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--===== FOOTER =====-->
+    <footer class="footer section">
+        <div class="footer__container bd-grid">
+            <div class="footer__box">
+                <h3 class="footer__title"><span class="Title1">H</span>elpThroughSound</h3>
+                <p class="footer__description">New Collection of Headsets 2021.</p>
+            </div>
+
+            <div class="footer__box">
+                <h3 class="footer__title"><span class="Title1">E</span>XPLORE</h3>
+                <ul>
+                    <li><a href="HomePage.cshtml#Home" class="footer__link">Home</a></li>
+                    <li><a href="HomePage.cshtml#featured" class="footer__link">Featured</a></li>
+                    <li><a href="HomePage.cshtml#HTS" class="footer__link">HTS</a></li>
+                    <li><a href="HomePage.cshtml#Award" class="footer__link">Why Us?</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__box">
+                <h3 class="footer__title"><span class="Title1">S</span>UPPORT</h3>
+                <ul>
+                    <li><a href="~/html/Support.cshtml" class="footer__link">Product Help</a></li>
+                    <li><a href="~/html/Support.cshtml" class="footer__link">Customer Care</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__box">
+                <a href="https://sv-se.facebook.com/supremeofficial" class="footer__social"><i class='bx bxl-facebook'></i></a>
+                <a href="https://www.instagram.com/supremenewyork/" class="footer__social"><i class='bx bxl-instagram'></i></a>
+                <a href="https://twitter.com/supremenewyork" class="footer__social"><i class='bx bxl-twitter'></i></a>
+                <a href="https://www.supremenewyork.com/" class="footer__social"><i class='bx bxl-google'></i></a>
+
+            </div>
+        </div>
+
+        <p class="footer__copy">&#169; 2021 HelpThroughSound. All rights reserved.</p>
+    </footer>
+
+
+</body>
+
+</html>

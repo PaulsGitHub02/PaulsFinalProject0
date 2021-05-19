@@ -1,0 +1,149 @@
+﻿@{ 
+    Layout = "~/Shared/_Layout1.cshtml";
+    Page.Title = "Hem"; 
+ }
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="~/css/StyleSheet.css">
+    <script src="~/java/javamain.js"></script>
+
+
+    <!-- ===== BOX ICONS ===== -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>HelpThroughSound</title>
+</head>
+<body>
+
+    <main class="l-main">
+        <!--===== HOME =====-->
+        <section class="home" id="home">
+            <div class="home__container bd-grid">
+                <div class="home__sneaker">
+                    <div class="home__shape"></div>
+                    <img src="~/images/intronew.png" alt="Home" class="home__img">
+                </div>
+
+                <div class="home__data">
+                    <span class="home__new">New in</span>
+                    <h1 class="home__title">Skull Candy<br> Silencer Headset</h1>
+                    <p class="home__description">Check out the new Collections of <br>Headsets & Airpods and speakers</p>
+                    <a href="~/html/HeadsetShop.cshtml" class="button">Explore now!</a>
+                </div>
+            </div>
+        </section>
+        <!--===== Intro =====-->
+        <section class="featured section" id="HTS">
+            <h2 class="section-title"><span class="Title1">H</span>TS</h2>
+            <div class="featured__container bd-grid">
+                <article class="sneaker">
+                    <h2 class="Intro__title"><span><span class="Title1">H</span>elpThroughSound</span></h2>
+                    <h4 class="Intro__title"><span>LENDING A HAND TO THE WEAK, HELP THROUGH SOUND!</span></h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae unde earum provident. Quam quisquam esse sit quae enim magni harum sint vero quasi odit. Facere, saepe. Totam ratione obcaecati cupiditate? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis quo nostrum nihil consectetur natus, quisquam officia sapiente quia temporibus praesentium voluptatem vitae quam ut eaque aspernatur et odio suscipit necessitatibus?</p>
+                    <br>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint aut recusandae ducimus, perspiciatis officiis deserunt ab a labore, placeat facere molestiae saepe atque dolores. Est, autem! Ipsum, ex! Temporibus, accusantium. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore alias aspernatur eveniet doloremque nesciunt perspiciatis velit recusandae cupiditate? Incidunt neque optio doloribus nihil sunt exercitationem necessitatibus aliquid ducimus quo eos!</p>
+                    <h4 class="Intro__title"><span>It's time to think about the less fortunate and help those in need.</span></h4>
+                </article>
+            </div>
+        </section>
+
+        <!--===== Award Winning =====-->
+        <section class="featured section" id="Award">
+            <h2 class="section-title"><span class="Title1">W</span>hy Us</h2>
+            <div class="featured__container bd-grid">
+                <article class="sneaker">
+                    <h2><span>Why choose <span class="Title1">H</span>elpThroughSound?</span></h2>
+                    <div>
+                        <img src="~/images/human.png" alt="Award" class="award__img" width="400">
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!--===== FEATURED  ALLT SOM FINNS I DETTA SECTION ÄR BOOTSTRAP 4 KOD från CodePen =====-->
+        <section class="featured section" id="featured">
+            <h2 class="section-title"><span class="Title1">F</span>eatured</h2>
+            <div class="featured__container bd-grid">
+                <article class="sneaker1">
+                    <figure class="icon-cards mt-3">
+                        <div class="icon-cards__content">
+                            <div class="icon-cards__item d-flex align-items-center justify-content-center">
+                                <span class="h1">
+                                    <img src="~/images/Airpods.jpg" alt="Sneaker" class="sneaker__img">
+                                    <span class="sneaker__name"><span class="Title1">H</span>igh <span class="Title1">T</span>ier <span class="Title1">A</span>irPods</span>
+                                    <span class="sneaker__preci"></span>
+                                    <a href="~/html/AirPodShop.cshtml" class="button-light">Go AirPods Shopping! <i class='bx bx-right-arrow-alt button-icon'></i></a>
+                                </span>
+                            </div>
+
+                            <div class="icon-cards__item d-flex align-items-center justify-content-center">
+                                <span class="h1">
+                                    <img src="~/images/bild1.jpg" alt="Sneaker" class="sneaker__img">
+                                    <span class="sneaker__name"><span class="Title1">S</span>ilencer <span class="Title1">H</span>eadsets</span>
+                                    <span class="sneaker__preci"></span>
+                                    <a href="~/html/HeadsetShop.cshtml" class="button-light">Go Headset Shopping! <i class='bx bx-right-arrow-alt button-icon'></i></a>
+                                </span>
+                            </div>
+
+                            <div class="icon-cards__item d-flex align-items-center justify-content-center">
+                                <img src="~/images/speaker0.png" alt="Sneaker" class="sneaker__img">
+                                <span class="sneaker__name"><span class="Title1">A</span>ir <span class="Title1">R</span>aid <span class="Title1">S</span>peakers</span>
+                                <span class="sneaker__preci"></span>
+                                <a href="~/html/SpeakerShop.cshtml" class="button-light">Go Speaker Shopping!<i class='bx bx-right-arrow-alt button-icon'></i></a>
+                            </div>
+                        </div>
+                    </figure>
+                    <script src="java.js"></script>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!--===== FOOTER =====-->
+    <footer class="footer section">
+        <div class="footer__container bd-grid">
+            <div class="footer__box">
+                <h3 class="footer__title"><span class="Title1">H</span>elpThroughSound</h3>
+                <p class="footer__description">New Collection of Headsets 2021.</p>
+            </div>
+
+            <div class="footer__box">
+                <h3 class="footer__title"><span class="Title1">E</span>XPLORE</h3>
+                <ul>
+                    <li><a href="#home" class="footer__link">Home</a></li>
+                    <li><a href="#featured" class="footer__link">Featured</a></li>
+                    <li><a href="#HTS" class="footer__link">HTS</a></li>
+                    <li><a href="#Award" class="footer__link">Why Us?</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__box">
+                <h3 class="footer__title"><span class="Title1">S</span>UPPORT</h3>
+                <ul>
+                    <li><a href="~/html/Support.cshtml" class="footer__link">Product Help</a></li>
+                    <li><a href="~/html/Support.cshtml" class="footer__link">Customer Care</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__box">
+                <a href="https://sv-se.facebook.com/supremeofficial" class="footer__social"><i class='bx bxl-facebook'></i></a>
+                <a href="https://www.instagram.com/supremenewyork/" class="footer__social"><i class='bx bxl-instagram'></i></a>
+                <a href="https://twitter.com/supremenewyork" class="footer__social"><i class='bx bxl-twitter'></i></a>
+                <a href="https://www.supremenewyork.com/" class="footer__social"><i class='bx bxl-google'></i></a>
+
+            </div>
+        </div>
+
+        <p class="footer__copy">&#169; 2021 HelpThroughSound. All rights reserved.</p>
+    </footer>
+
+    <!--===== MAIN JS =====-->
+
+</body>
+</html>

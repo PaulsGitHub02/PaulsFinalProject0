@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+    @RenderSection("head", required: false)
+
+    <!-- ===== CSS ===== -->
+    <link href="../css/StyleSheet1.css" rel="stylesheet" />
+
+    <!-- ===== BOX ICONS ===== -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <!--===== HEADER =====-->
+    <header class="i-header" id="header">
+        <nav class="nav bd-grid">
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bxs-grid'></i>
+            </div>
+
+            <a href="#" class="nav__logo"><span class="Title1">H</span>elp<span class="Title1">T</span>hrough<span class="Title1">S</span>ound</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="HomePage.cshtml" class="nav__link active">Home</a></li>
+                    <li class="nav__item"><a href="HomePage.cshtml#HTS" class="nav__link">HTS</a></li>
+                    <li class="nav__item"><a href="HomePage.cshtml#Award" class="nav__link">Why Us?</a></li>
+                    <li class="nav__item"><a href="HomePage.cshtml#featured" class="nav__link">Featured</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <main>
+        @RenderBody()
+    </main>
+</body>
+</html>

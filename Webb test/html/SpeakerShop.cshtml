@@ -1,0 +1,116 @@
+﻿@{ Layout = "~/Shared/_Layout1.cshtml";
+
+    Page.Title = "Hem"; }
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--==== CSS ====-->
+    <link rel="stylesheet" href="~/css/StyleSheet2.css">
+    <!--==== BOX ICONS ====-->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>HelpThroughSound</title>
+</head>
+
+<body>
+
+    <main class="l-main">
+
+        <!--==== ALL PRODUCTS ====-->
+        <section class="container content-section bd-grid">
+            <h2 class="section-header"><span class="Title1">S</span>peakers</h2>
+            <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title">DJ Hat</span>
+                    <img class="shop-item-image" src="~/images/speaker2.png" alt="3">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$599.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">The Breath Taker</span>
+                    <img class="shop-item-image" src="~/images/speaker0.png" alt="4">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$1009.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Smooth and loud</span>
+                    <img class="shop-item-image" src="~/images/speaker3.png" alt="3">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$750</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section class="container content-section">
+            <h2 class="section-header"><span class="Title1">C</span>ART</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column"><span class="Title1">I</span>TEM</span>
+                <span class="cart-price cart-header cart-column"><span class="Title1">P</span>RICE</span>
+                <span class="cart-quantity cart-header cart-column"><span class="Title1">Q</span>UANTITY</span>
+            </div>
+            <div class="cart-items">
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">$0</span>
+            </div>
+            <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+        </section>
+
+
+
+    </main>
+    <!--===== FOOTER =====-->
+    <footer class="footer section">
+        <div class="footer__container bd-grid">
+            <div class="footer__box">
+                <h3 class="footer__title"><span class="Title1">H</span>elpThroughSound</h3>
+                <p class="footer__description">New Collection of Headsets 2021.</p>
+            </div>
+
+            <div class="footer__box">
+                <h3 class="footer__title"><span class="Title1">E</span>XPLORE</h3>
+                <ul>
+                    <li><a href="HomePage.cshtml#Home" class="footer__link">Home</a></li>
+                    <li><a href="HomePage.cshtml#featured" class="footer__link">Featured</a></li>
+                    <li><a href="HomePage.cshtml#HTS" class="footer__link">HTS</a></li>
+                    <li><a href="HomePage.cshtml#Award" class="footer__link">Why Us?</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__box">
+                <h3 class="footer__title"><span class="Title1">S</span>UPPORT</h3>
+                <ul>
+                    <li><a href="~/html/Support.cshtml" class="footer__link">Product Help</a></li>
+                    <li><a href="~/html/Support.cshtml" class="footer__link">Customer Care</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__box">
+                <a href="https://sv-se.facebook.com/supremeofficial" class="footer__social"><i class='bx bxl-facebook'></i></a>
+                <a href="https://www.instagram.com/supremenewyork/" class="footer__social"><i class='bx bxl-instagram'></i></a>
+                <a href="https://twitter.com/supremenewyork" class="footer__social"><i class='bx bxl-twitter'></i></a>
+                <a href="https://www.supremenewyork.com/" class="footer__social"><i class='bx bxl-google'></i></a>
+
+            </div>
+        </div>
+
+        <p class="footer__copy">&#169; 2021 HelpThroughSound. All rights reserved.</p>
+    </footer>
+
+    <!--==== MAIN JS ====-->
+    <script src="~/java/javamain.js"></script>
+
+</body>
+</html>
