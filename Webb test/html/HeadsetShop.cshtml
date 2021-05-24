@@ -5,29 +5,24 @@
 @using System.Data.SqlClient;
 @using System.Web.Security;
 
-@{ using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TheMultiShop"].ConnectionString))
-                {
-                    con.Open();
-                    var queryString = "SELECT * FROM Products";
-                    SqlCommand cmd = new SqlCommand(queryString, con);
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.HasRows)
-                        {
-                            // Read advances to the next row.
-                            while (reader.Read())
-                            {
-                                var valeu1 = reader[0];
-                                var value2 = reader[1];
-                            }
 
-                        }
-                    }
-                } }
+@{ var db = Database.Open("TheMultiShop");
+    var queryString = "SELECT * FROM Orders";
+    var result = db.Query(queryString);
+
+
+    foreach (var Orders in result)
+    {
+        @Orders.ID
+        @Orders.CategoryID
+        @Orders.Name
+        @Orders.Price 
+    } 
+ }
 
 @{ Layout = "~/Shared/_Layout1.cshtml";
 
-    Page.Title = "Hem"; }
+    Page.Title = "HeadsetShop"; }
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +34,7 @@
     <!--==== BOX ICONS ====-->
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
-    <title>HeadsetShop</title>
+    <title>HeadsetShop - HelpThroughSound</title>
 </head>
 
 <body>

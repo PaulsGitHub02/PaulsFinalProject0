@@ -7,7 +7,7 @@
 
 @{ Layout = "~/Shared/_Layout1.cshtml";
 
-    Page.Title = "Hem";
+    Page.Title = "Support";
 }
 
 @{
@@ -45,6 +45,27 @@
         }
     }
 }
+
+
+@{ var db = Database.Open("TheMultiShop");
+    var queryString = "SELECT * FROM Information";
+    var result = db.Query(queryString);
+
+
+    foreach (var Information in result)
+    {
+        @Information.ID
+        @Information.Name
+        @Information.Mail
+        @Information.Message
+    }
+}
+
+@{ Layout = "~/Shared/_Layout1.cshtml";
+
+    Page.Title = "SpeakerShop"; 
+}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,26 +95,24 @@
                     <h2>Log in!</h2>
                     <div class="form4 top">
                         <div class="container">
-                            <div class="row">
-                                    <div class="form-bg">
-                                        <form method="post" class="form">
-                                            @AntiForgery.GetHtml()
-                                            @Html.ValidationSummary(true)
-                                            <div class="form-group">
-                                                <label class="sr-only">UserName</label>
-                                                <input type="text" class="form-control" id="exampleInputName2" placeholder="Your Username" maxlength="20">
-                                                @Html.ValidationMessage("UserName")
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="sr-only">Password</label>
-                                                <input type="password" class="form-control" id="exampleInputEmail2" placeholder="Your password" maxlength="50">
-                                                @Html.ValidationMessage("Password")
-                                            </div>
-                                            <label>Remember my account</label>
-                                            <input type="checkbox" name="rememberLogin" value="true" checked="@rememberLogin" />
-                                            <button type="submit" class="btn text-center btn-blue">Log in</button>
-                                        </form>
+                            <div class="form-bg">
+                                <form method="post" class="form">
+                                    @AntiForgery.GetHtml()
+                                    @Html.ValidationSummary(true)
+                                    <div class="form-group">
+                                        <label class="sr-only">UserName</label>
+                                        <input type="text" class="form-control" id="exampleInputName2" placeholder="Your Username" maxlength="20">
+                                        @Html.ValidationMessage("UserName")
                                     </div>
+                                    <div class="form-group">
+                                        <label class="sr-only">Password</label>
+                                        <input type="password" class="form-control" id="exampleInputEmail2" placeholder="Your password" maxlength="50">
+                                        @Html.ValidationMessage("Password")
+                                    </div>
+                                    <label>Remember my account</label>
+                                    <input type="checkbox" name="rememberLogin" value="true" checked="@rememberLogin" />
+                                    <button type="submit" class="btn text-center btn-blue">Log in</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -102,15 +121,13 @@
                     <h2>Enter your Info!</h2>
                     <div class="form4 top">
                         <div class="container">
-                            <div class="row">
-                                <div class="col-md-7 col-md-offset-2">
-                                    <div class="form-bg">
-                                        <form class="form">
-                                            <div class="form-group"> <label class="sr-only">Name</label> <input type="text" class="form-control" required="" id="nameNine2" placeholder="Your Name"> </div>
-                                            <div class="form-group"> <label class="sr-only">Email</label> <input type="email" class="form-control" required="" id="emailNine2" placeholder="Email Address"> </div>
-                                            <div class="form-group"> <label class="sr-only">Name</label> <textarea class="form-control" required="" rows="7" id="messageNine2" placeholder="Write message"></textarea> </div> <button type="submit" class="btn text-center btn-blue">Send Message</button>
-                                        </form>
-                                    </div>
+                            <div class="col-md-7 col-md-offset-2">
+                                <div class="form-bg">
+                                    <form class="form">
+                                        <div class="form-group"> <label class="sr-only">Name</label> <input type="text" class="form-control" required="" id="nameNine2" placeholder="Your Name"> </div>
+                                        <div class="form-group"> <label class="sr-only">Email</label> <input type="email" class="form-control" required="" id="emailNine2" placeholder="Email Address"> </div>
+                                        <div class="form-group"> <label class="sr-only">Name</label> <textarea class="form-control" required="" rows="7" id="messageNine2" placeholder="Write message"></textarea> </div> <button type="submit" class="btn text-center btn-blue">Send Message</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>

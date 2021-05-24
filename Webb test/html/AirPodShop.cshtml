@@ -1,6 +1,28 @@
-﻿@{ Layout = "~/Shared/_Layout1.cshtml";
+﻿@using WebMatrix;
+@using System;
+@using System.Collections.Generic;
+@using System.Configuration;
+@using System.Data.SqlClient;
+@using System.Web.Security;
 
-    Page.Title = "Hem"; }
+
+@{ var db = Database.Open("TheMultiShop");
+    var queryString = "SELECT * FROM Orders";
+    var result = db.Query(queryString);
+
+
+    foreach (var Orders in result)
+    {
+        @Orders.ID
+        @Orders.CategoryID
+        @Orders.Name
+        @Orders.Price
+    }
+}
+
+@{ Layout = "~/Shared/_Layout1.cshtml";
+
+    Page.Title = "AirPodShop"; }
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +34,7 @@
     <!--==== BOX ICONS ====-->
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
-    <title>FreshStore</title>
+    <title>AirPodShop - HelpThroughSound</title>
 </head>
 
 <body>
@@ -21,7 +43,7 @@
 
         <!--==== ALL PRODUCTS ====-->
         <section class="container content-section bd-grid">
-            <h2 class="section-header"><span class="Title1">H</span>eadsets</h2>
+            <h2 class="section-header"><span class="Title1">A</span>irPods</h2>
             <div class="shop-items">
                 <div class="shop-item">
                     <span class="shop-item-title">White Advanced</span>

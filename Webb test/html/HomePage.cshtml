@@ -1,6 +1,6 @@
 ﻿@{ 
     Layout = "~/Shared/_Layout1.cshtml";
-    Page.Title = "Hem"; 
+    Page.Title = "Home"; 
  }
 
 <!DOCTYPE html>
@@ -55,13 +55,18 @@
 
         <!--===== Award Winning =====-->
         <section class="featured section" id="Award">
-            <h2 class="section-title"><span class="Title1">W</span>hy Us</h2>
+            <h2 class="section-title"><span class="Title1">W</span>hy Us?</h2>
             <div class="featured__container bd-grid">
                 <article class="sneaker">
-                    <h2><span>Why choose <span class="Title1">H</span>elpThroughSound?</span></h2>
-                    <div>
-                        <img src="~/images/human.png" alt="Award" class="award__img" width="400">
-                    </div>
+                    <img src="../images/paul.jpg" alt="Degree" class="Degrees"/>
+                </article>
+
+                <article class="sneaker">
+                    <img src="../images/paulg.jpg" alt="Degree" class="Degrees"/>
+                </article>
+
+                <article class="sneaker">
+                    <img src="../images/paul3.png" alt="Degree" class="Degrees"/>
                 </article>
             </div>
         </section>
@@ -75,7 +80,7 @@
                         <div class="icon-cards__content">
                             <div class="icon-cards__item d-flex align-items-center justify-content-center">
                                 <span class="h1">
-                                    <img src="~/images/Airpods.jpg" alt="Sneaker" class="sneaker__img">
+                                    <a href="~/html/AirPodShop.cshtml" class="button-light"><img src="~/images/Airpods.jpg" alt="sneaker" class="sneaker__img"></a>
                                     <span class="sneaker__name"><span class="Title1">H</span>igh <span class="Title1">T</span>ier <span class="Title1">A</span>irPods</span>
                                     <span class="sneaker__preci"></span>
                                     <a href="~/html/AirPodShop.cshtml" class="button-light">Go AirPods Shopping! <i class='bx bx-right-arrow-alt button-icon'></i></a>
@@ -84,7 +89,7 @@
 
                             <div class="icon-cards__item d-flex align-items-center justify-content-center">
                                 <span class="h1">
-                                    <img src="~/images/bild1.jpg" alt="Sneaker" class="sneaker__img">
+                                    <a href="~/html/HeadsetShop.cshtml" class="button-light"><img src="~/images/bild1.jpg" alt="sneaker" class="sneaker__img"></a>
                                     <span class="sneaker__name"><span class="Title1">S</span>ilencer <span class="Title1">H</span>eadsets</span>
                                     <span class="sneaker__preci"></span>
                                     <a href="~/html/HeadsetShop.cshtml" class="button-light">Go Headset Shopping! <i class='bx bx-right-arrow-alt button-icon'></i></a>
@@ -92,7 +97,7 @@
                             </div>
 
                             <div class="icon-cards__item d-flex align-items-center justify-content-center">
-                                <img src="~/images/speaker0.png" alt="Sneaker" class="sneaker__img">
+                                <a href="~/html/SpeakerShop.cshtml" class="button-light"><img src="~/images/speaker0.png" alt="sneaker" class="sneaker__img"></a>
                                 <span class="sneaker__name"><span class="Title1">A</span>ir <span class="Title1">R</span>aid <span class="Title1">S</span>peakers</span>
                                 <span class="sneaker__preci"></span>
                                 <a href="~/html/SpeakerShop.cshtml" class="button-light">Go Speaker Shopping!<i class='bx bx-right-arrow-alt button-icon'></i></a>
@@ -112,7 +117,6 @@
                 <h3 class="footer__title"><span class="Title1">H</span>elpThroughSound</h3>
                 <p class="footer__description">New Collection of Headsets 2021.</p>
             </div>
-
             <div class="footer__box">
                 <h3 class="footer__title"><span class="Title1">E</span>XPLORE</h3>
                 <ul>
@@ -143,7 +147,6 @@
         <p class="footer__copy">&#169; 2021 HelpThroughSound. All rights reserved.</p>
     </footer>
 
-    <!--===== MAIN JS =====-->
 
 </body>
 </html>

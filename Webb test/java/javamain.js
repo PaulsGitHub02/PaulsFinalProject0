@@ -35,7 +35,8 @@ if (document.readyState == 'loading') {
 } else {
     ready()
 }
-/* var removeCartItemsButtons är för att kunna radera varor från kundvagnen*/
+
+/* var removeCartItemsButtons is the button that allows you to remove items from the shoppingcart*/
 function ready() {
     var removeCartItemButtons = document.getElementsByClassName('btn-danger')
     for (var i = 0; i < removeCartItemButtons.length; i++) {
@@ -43,13 +44,13 @@ function ready() {
         button.addEventListener('click', removeCartItem)
     }
 
-    /* QuantityInputs är för att kunna lägga varor till shoppingcarten */
+    /* QuantityInputs is to be able change the amount of items in the shopping cart, such as 10 headsets or 10 speakers. */
     var quantityInputs = document.getElementsByClassName('cart-quantity-input')
     for (var i = 0; i < quantityInputs.length; i++) {
         var input = quantityInputs[i]
         input.addEventListener('change', quantityChanged)
     }
-    /* AddToCartButtons är för att kunna lägga varor till shoppingcarten*/
+    /* AddToCartButtons is to add items to the shopping cart*/
     var addToCartButtons = document.getElementsByClassName('shop-item-button')
     for (var i = 0; i < addToCartButtons.length; i++) {
         var button = addToCartButtons[i]
@@ -59,7 +60,7 @@ function ready() {
     document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
 }
 
-/* purchaseClicked är för att få en popup när man klickar på "Purchase" knappen */
+/* purchaseClicked is to get a popup with "Thank you for your purchase" alert after clicking "Purchase" */
 function purchaseClicked() {
     alert('Thank you for your purchase')
     var cartItems = document.getElementsByClassName('cart-items')[0]
@@ -69,14 +70,14 @@ function purchaseClicked() {
     updateCartTotal()
 }
 
-/* remvoeCartItem är för att radera grejer från shopping karten */
+/* remvoeCartItem is to remove items from cart once clicked */
 function removeCartItem(event) {
     var buttonClicked = event.target
     buttonClicked.parentElement.parentElement.remove()
     updateCartTotal()
 }
 
-/* QuantityChanged är för att kunna trycka på varan i karten och där höja antalet man vill ha av samma vara*/
+/* QuantityChanged is to change the quantity (such as 10 headsets of the same piece) once clicked.*/
 function quantityChanged(event) {
     var input = event.target
     if (isNaN(input.value) || input.value <= 0) {
@@ -85,7 +86,7 @@ function quantityChanged(event) {
     updateCartTotal()
 }
 
-/* Det är layouten man ser när man lägger till en vara till karten, man ser namn, bild, pris och total antal pengar man ska betala*/
+/*This is the layout you see once you add an item, the "Name, Picture, Price, quantity and total amount to be paid*/
 function addToCartClicked(event) {
     var button = event.target
     var shopItem = button.parentElement.parentElement
@@ -96,7 +97,7 @@ function addToCartClicked(event) {
     updateCartTotal()
 }
 
-/* addItemToCart är för att inte kunna välja samma vara flera gånger utan bara höja antalet i karten*/
+/*This is a alert to tell the customer that he cannot add the same item multiple times, but he can increase the quantity of it */
 function addItemToCart(title, price, imageSrc) {
     var cartRow = document.createElement('div')
     cartRow.classList.add('cart-row')
@@ -124,7 +125,7 @@ function addItemToCart(title, price, imageSrc) {
     cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
 }
 
-/* Alla "updateCartTotal är för att efter varje situation så uppdateras totala priset till det som är kvar i shopping carten*/
+/* This is to update the total price of all items in the cart and the quantity of them. */
 function updateCartTotal() {
     var cartItemContainer = document.getElementsByClassName('cart-items')[0]
     var cartRows = cartItemContainer.getElementsByClassName('cart-row')
@@ -141,13 +142,9 @@ function updateCartTotal() {
     document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
 
 }
-document.getElementsByClassName('btn-purchase1')[0].addEventListener('click', purchase1Clicked)
-
-function purchase1Clicked() {
-    alert('Your Message Has Been Sent')
-}
 
 
+/* Carusel animation for the Featured part of the website on frontpage.*/
 function classToggle() {
     var el = document.querySelector('.icon-cards__content');
     el.classList.toggle('step-animation');
